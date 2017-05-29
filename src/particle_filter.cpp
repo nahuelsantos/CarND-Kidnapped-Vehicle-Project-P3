@@ -35,9 +35,9 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
 		normal_distribution<double> gps_error_y(y, std[1]);
 		normal_distribution<double> gps_error_theta(theta, std[2]);
 
-        double x = gps_error_x(dre);
-        double y = gps_error_y(dre);
-        double theta = gps_error_theta(dre);
+		double x = gps_error_x(dre);
+		double y = gps_error_y(dre);
+		double theta = gps_error_theta(dre);
 		double weight = 1.0;
 
 		Particle particle = { i, x, y, theta, weight };
@@ -133,7 +133,7 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
 		vector<LandmarkObs> observations_map;
 		int observations_size = observations.size();
 		    
-	    for (int j = 0; j < observations_size; j++)
+		for (int j = 0; j < observations_size; j++)
 		{
 			LandmarkObs landmark;
 			landmark.x = observations[j].x * cos(current_theta) - observations[j].y * sin(current_theta) + current_x;
